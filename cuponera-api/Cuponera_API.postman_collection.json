@@ -1,0 +1,129 @@
+
+{
+    "info": {
+        "name": "Cuponera API (tabla usuario)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Registrar usuario",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"nombre\": \"\",\n    \"apellido\": \"\",\n     \"telefono\": \"\",\n    \"correo\": \"@gmail.com\",\n     \"direccion\": \"\",\n     \"DUI\": \"\",\n    \"contra\": \"123456\",\n     \"id_tipo_usuario\": \"\"\n}"
+                },
+                "url": {
+                    "raw": "{{url}}/api/register",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "register"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"correo\": \"@gmail.com\",\n    \"contra\": \"123456\"\n}"
+                },
+                "url": {
+                    "raw": "{{url}}/api/login",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "login"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Logout",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{url}}/api/logout",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "logout"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Obtener cup\u00f3n por c\u00f3digo",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{url}}/api/cupon/AU741H",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "cupon",
+                        "AU741H"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Canjear cup\u00f3n por c\u00f3digo",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{url}}/api/cupon/AU741H/canjear",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "cupon",
+                        "AU741H"
+                    ]
+                }
+            }
+        }
+    ]
+}
