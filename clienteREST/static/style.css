@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 2em;
+    background: #f4f4f4;
+}
+form {
+    margin-bottom: 1em;
+}
+input, button {
+    padding: 0.5em;
+    margin: 0.2em;
+}
+.success {
+    color: green;
+}
+.error {
+    color: red;
+}
+.cupon-info {
+    margin-top: 1em;
+    background: #fff;
+    padding: 1em;
+    border-radius: 8px;
+    display: inline-block;
+}

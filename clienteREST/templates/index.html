@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente Cuponera</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Consulta o Canjea tu Cupón</h1>
+
+    <form method="POST">
+        <input type="text" name="codigo" placeholder="Código del cupón" required>
+        <button name="consultar" type="submit">Consultar</button>
+        <button name="canjear" type="submit">Canjear</button>
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    {% if cupon %}
+        <div class="cupon-info">
+            <h2>Información del Cupón</h2>
+            <p><strong>Correo del Usuario:</strong> {{ cupon.correo_usuario }}</p>
+            <p><strong>Código:</strong> {{ cupon.codigo }}</p>
+            <p><strong>Descripción:</strong> {{ cupon.descripcion }}</p>
+            <p><strong>Fecha de Generación:</strong> {{ cupon.fecha_generacion }}</p>
+            <p><strong>Estado:</strong> {{ cupon.estado }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
